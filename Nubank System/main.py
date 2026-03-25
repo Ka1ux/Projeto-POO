@@ -78,7 +78,24 @@ class Atendimento:
 
 
 #Matheus 
-#kauá
+
+
+class LimiteCartao:
+    def __init__(self, id, nome_cliente, limite_total, gasto_atual):
+        self.id = id
+        self.cliente = nome_cliente
+        self.total = limite_total
+        self.gasto = gasto_atual
+        self.disponivel = limite_total - gasto_atual
+
+class HistoricoTransferencia:
+    def __init__(self, id, data, valor, recebedor, tipo):
+        self.id = id
+        self.data = data
+        self.valor = valor
+        self.recebedor = recebedor
+        self.tipo = tipo
+
 
 cliente1 = Cliente("cliente1" , "000.000.000-20")
 cliente2 = Cliente("cliente2" , "111.111.111-21")
@@ -133,4 +150,15 @@ a4 = Atendimento(4, u4, "Solicitação de reembolso", "fechado")
 a5 = Atendimento(5, u5, "Alteração de dados", "aberto")
 
 #Matheus 
-#kauá
+
+cartao1 = LimiteCartao(1, "João Silva", 5000.0, 1200.0)
+cartao2 = LimiteCartao(2, "Maria Oliveira", 2500.0, 2450.0)
+cartao3 = LimiteCartao(3, "Carlos Souza", 10000.0, 0.0)
+cartao4 = LimiteCartao(4, "Ana Costa", 1500.0, 800.0)
+cartao5 = LimiteCartao(5, "Bruno Alves", 3000.0, 3100.0)
+
+transf1 = HistoricoTransferencia(1, "20/03/2026", 150.0, "Mercado Central", "Pix")
+transf2 = HistoricoTransferencia(2, "21/03/2026", 45.90, "Netflix", "Crédito")
+transf3 = HistoricoTransferencia(3, "22/03/2026", 1200.0, "Aluguel", "TED")
+transf4 = HistoricoTransferencia(4, "23/03/2026", 15.00, "Padaria Pão de Mel", "Débito")
+transf5 = HistoricoTransferencia(5, "24/03/2026", 350.0, "Posto Combustível", "Crédito")
